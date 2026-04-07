@@ -1,14 +1,14 @@
 const API = window.location.origin;
 
-function getToken() { return localStorage.getItem('guardian_token'); }
-function getUser()  { return JSON.parse(localStorage.getItem('guardian_user') || '{}'); }
+function getToken() { return localStorage.getItem('calvira_token'); }
+function getUser()  { return JSON.parse(localStorage.getItem('calvira_user') || '{}'); }
 function setAuth(token, user) {
-  localStorage.setItem('guardian_token', token);
-  localStorage.setItem('guardian_user', JSON.stringify(user));
+  localStorage.setItem('calvira_token', token);
+  localStorage.setItem('calvira_user', JSON.stringify(user));
 }
 function clearAuth() {
-  localStorage.removeItem('guardian_token');
-  localStorage.removeItem('guardian_user');
+  localStorage.removeItem('calvira_token');
+  localStorage.removeItem('calvira_user');
 }
 function requireAuth() {
   if (!getToken()) { window.location.href = '/login'; return false; }
