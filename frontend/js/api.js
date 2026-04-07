@@ -1,4 +1,4 @@
-const BASE_URL = window.location.origin;
+const API = window.location.origin;
 
 function getToken() { return localStorage.getItem('guardian_token'); }
 function getUser()  { return JSON.parse(localStorage.getItem('guardian_user') || '{}'); }
@@ -67,3 +67,7 @@ function timeAgo(str) {
   if (h < 24) return `${h}h ago`;
   return `${Math.floor(h / 24)}d ago`;
 }
+
+window.apiFetch = apiFetch;
+window.setAuth = setAuth;
+window.redirectIfLoggedIn = redirectIfLoggedIn;
